@@ -1,18 +1,18 @@
-# @manuto276/analytics-node
+# @frascella-dev/analytics-node
 
-A client for the server API of [analytics](https://github.com/manuto276/analytics): send server-side
+A client for the server API of [analytics](https://github.com/frascella-dev/analytics): send server-side
 conversions, read content stats and reports. Node 18 or later (any runtime with `fetch` works), no
 dependencies, typed from the API's OpenAPI document.
 
-MIT licensed. Full guide: [docs/integration/sdk-node.md](https://github.com/manuto276/analytics/blob/main/docs/integration/sdk-node.md).
+MIT licensed. Full guide: [docs/integration/sdk-node.md](https://github.com/frascella-dev/analytics/blob/main/docs/integration/sdk-node.md).
 
 ## Install
 
-The package is published to GitHub Packages. Tell npm (or pnpm, or yarn) where the `@manuto276`
+The package is published to GitHub Packages. Tell npm (or pnpm, or yarn) where the `@frascella-dev`
 scope lives, in the project's `.npmrc`:
 
 ```ini
-@manuto276:registry=https://npm.pkg.github.com
+@frascella-dev:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -21,13 +21,13 @@ GitHub Packages needs a token even for public packages: a personal access token 
 `packages: read` works). Then:
 
 ```sh
-npm install @manuto276/analytics-node
+npm install @frascella-dev/analytics-node
 ```
 
 ## Use
 
 ```ts
-import { AnalyticsApiError, createClient, visitorIdFromRequest } from '@manuto276/analytics-node';
+import { AnalyticsApiError, createClient, visitorIdFromRequest } from '@frascella-dev/analytics-node';
 
 const analytics = createClient({
   serviceUrl: 'https://stats.example.net',

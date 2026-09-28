@@ -1,16 +1,16 @@
 {
-  "name": "@manuto276/analytics-browser",
+  "name": "@frascella-dev/analytics-browser",
   "version": "0.1.0",
   "description": "Typed browser client for the analytics tracker: loads the script once, queues calls, React and Vue bindings.",
   "license": "MIT",
   "author": "The analytics contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manuto276/analytics.git",
+    "url": "git+https://github.com/frascella-dev/analytics.git",
     "directory": "services/sdk/browser"
   },
-  "homepage": "https://github.com/manuto276/analytics/blob/main/docs/integration/sdk-browser.md",
-  "bugs": "https://github.com/manuto276/analytics/issues",
+  "homepage": "https://github.com/frascella-dev/analytics/blob/main/docs/integration/sdk-browser.md",
+  "bugs": "https://github.com/frascella-dev/analytics/issues",
   "keywords": [
     "analytics",
     "privacy",

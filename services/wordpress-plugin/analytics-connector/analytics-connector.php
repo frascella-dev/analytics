@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Analytics
- * Plugin URI:        https://github.com/manuto276/analytics
+ * Plugin URI:        https://github.com/frascella-dev/analytics
  * Description:       The site's visits, sources and conversions, measured by your own analytics service — the tracker and its consent banner on every page, and a dashboard in WordPress.
  * Version:           1.0.0
  * Requires at least: 6.6
@@ -12,7 +12,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       analytics-connector
  * Domain Path:       /languages
- * Update URI:        https://github.com/manuto276/analytics
+ * Update URI:        https://github.com/frascella-dev/analytics
  *
  * The slug, the option and the prefix are the connector's (analytics-connector), so a site
  * that ran it updates in place and keeps its settings. `Update URI` stops wordpress.org from

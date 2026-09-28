@@ -1,6 +1,6 @@
-# @manuto276/analytics-browser
+# @frascella-dev/analytics-browser
 
-A typed client for the [analytics](https://github.com/manuto276/analytics) tracker, for sites that are
+A typed client for the [analytics](https://github.com/frascella-dev/analytics) tracker, for sites that are
 built with a bundler: it loads the tracker once, queues calls until it is ready, and has bindings
 for React and Vue. It works during server rendering (Next.js, Nuxt) by doing nothing there.
 
@@ -8,15 +8,15 @@ The tracker itself is still served by your analytics service (`GET /t/{publicKey
 site's configuration and consent banner). This package contains no tracker code; it only inserts
 that script, with the same queue contract as the snippet.
 
-MIT licensed. Full guide: [docs/integration/sdk-browser.md](https://github.com/manuto276/analytics/blob/main/docs/integration/sdk-browser.md).
+MIT licensed. Full guide: [docs/integration/sdk-browser.md](https://github.com/frascella-dev/analytics/blob/main/docs/integration/sdk-browser.md).
 
 ## Install
 
-The package is published to GitHub Packages. Tell npm (or pnpm, or yarn) where the `@manuto276`
+The package is published to GitHub Packages. Tell npm (or pnpm, or yarn) where the `@frascella-dev`
 scope lives, in the project's `.npmrc`:
 
 ```ini
-@manuto276:registry=https://npm.pkg.github.com
+@frascella-dev:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -25,13 +25,13 @@ GitHub Packages needs a token even for public packages: a personal access token 
 `packages: read` works). Then:
 
 ```sh
-npm install @manuto276/analytics-browser
+npm install @frascella-dev/analytics-browser
 ```
 
 ## Use
 
 ```ts
-import { load } from '@manuto276/analytics-browser';
+import { load } from '@frascella-dev/analytics-browser';
 
 const analytics = load({
   serviceUrl: 'https://stats.example.net',
@@ -56,7 +56,7 @@ tracking off.
 ### React
 
 ```tsx
-import { AnalyticsProvider, useAnalytics, useConsent } from '@manuto276/analytics-browser/react';
+import { AnalyticsProvider, useAnalytics, useConsent } from '@frascella-dev/analytics-browser/react';
 
 <AnalyticsProvider serviceUrl="https://stats.example.net" publicKey="pk_XXXXXXXXXXXXXXXXXXXXX">
   <App />
@@ -71,7 +71,7 @@ function CookieSettings() {
 ### Vue
 
 ```ts
-import { createAnalytics, useConsent } from '@manuto276/analytics-browser/vue';
+import { createAnalytics, useConsent } from '@frascella-dev/analytics-browser/vue';
 
 app.use(createAnalytics({ serviceUrl: 'https://stats.example.net', publicKey: 'pk_XXXXXXXXXXXXXXXXXXXXX' }));
 
@@ -84,7 +84,7 @@ const { status, open } = useConsent();
 Importing the package types `window.analytics` (and `window.__analytics`). For a custom global name:
 
 ```ts
-import type { AnalyticsGlobals } from '@manuto276/analytics-browser';
+import type { AnalyticsGlobals } from '@frascella-dev/analytics-browser';
 
 declare global {
   interface Window extends AnalyticsGlobals<'stats'> {}

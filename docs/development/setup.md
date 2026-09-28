@@ -6,7 +6,7 @@ locally, although Node 24 + corepack is convenient for running the dashboard dev
 server outside the stack.
 
 ```bash
-git clone git@github.com:manuto276/analytics.git
+git clone git@github.com:frascella-dev/analytics.git
 cd analytics
 make help          # every target, with a one-line description
 ```

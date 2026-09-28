@@ -24,7 +24,7 @@ permissive licence, and integrators check for it.
 Where to publish: npmjs.com needs an organisation or a personal scope and a second account and
 token to manage; GitHub Packages lives next to the repository, is published with the workflow's
 own `GITHUB_TOKEN` (no long-lived secret), links each version to the commit and the release, and
-keeps the `@manuto276` scope under the same ownership as the code. Its cost is on the consumer's
+keeps the `@frascella-dev` scope under the same ownership as the code. Its cost is on the consumer's
 side: the scope has to be mapped to `https://npm.pkg.github.com` in `.npmrc`, and installing needs a
 token with `read:packages`, even for a public package.
 
@@ -33,10 +33,10 @@ token with `read:packages`, even for a public package.
 Two packages live in `services/sdk/`, each a standalone pnpm project with its own lockfile, like
 the tracker and the dashboard:
 
-- **`@manuto276/analytics-browser`** (`services/sdk/browser`): `load()` inserts the queue stub and
+- **`@frascella-dev/analytics-browser`** (`services/sdk/browser`): `load()` inserts the queue stub and
   the tracker's `<script>` once, returns a typed client, is a no-op without `window`, and has React
   (`/react`) and Vue (`/vue`) bindings with React and Vue as optional peer dependencies.
-- **`@manuto276/analytics-node`** (`services/sdk/node`): `createClient()` for conversions, content
+- **`@frascella-dev/analytics-node`** (`services/sdk/node`): `createClient()` for conversions, content
   stats and every `/server/sites/{publicKey}/reports/*` route, with `AnalyticsApiError` from problem
   documents and retries honouring `Retry-After`. Node 18 or later, global `fetch`.
 

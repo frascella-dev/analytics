@@ -1,6 +1,6 @@
 {
   "_comment": "422 application/problem+json. Match on \"code\", never on \"title\" or \"detail\". See ../errors.md.",
-  "type": "https://github.com/manuto276/analytics/blob/main/docs/api/errors.md#validation_failed",
+  "type": "https://github.com/frascella-dev/analytics/blob/main/docs/api/errors.md#validation_failed",
   "title": "Validation failed",
   "status": 422,
   "code": "validation_failed",

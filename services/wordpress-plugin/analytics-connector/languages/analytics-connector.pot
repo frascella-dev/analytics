@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Analytics 1.0.0\n"
-"Report-Msgid-Bugs-To: https://github.com/manuto276/analytics/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/frascella-dev/analytics/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #. Plugin URI of the plugin
 #: analytics-connector.php
-msgid "https://github.com/manuto276/analytics"
+msgid "https://github.com/frascella-dev/analytics"
 msgstr ""
 
 #. Description of the plugin

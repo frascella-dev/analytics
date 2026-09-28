@@ -12,7 +12,7 @@ ES2019 IIFEs:
 The API (`GET /t/{publicKey}.js`) serves one file:
 
 ```
-/*! analytics | AGPL-3.0-or-later | source: https://github.com/manuto276/analytics */
+/*! analytics | AGPL-3.0-or-later | source: https://github.com/frascella-dev/analytics */
 window.__an_cfg=<JSON config>;
 <contents of dist/banner.js>      ← only when the site has the cookie level on (cfg.c)
 <contents of dist/tracker.js>

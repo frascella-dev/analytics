@@ -1,4 +1,4 @@
-# Browser SDK (`@manuto276/analytics-browser`)
+# Browser SDK (`@frascella-dev/analytics-browser`)
 
 For sites built with a bundler — plain JavaScript, React, Vue, Next.js, Nuxt — the browser SDK loads
 the tracker and gives you a typed client. It is the snippet from [tracker.md](tracker.md) as a
@@ -14,10 +14,10 @@ package: the same script, the same queue, the same API, with types and framework
 
 ## Install
 
-The package is on GitHub Packages. Map the `@manuto276` scope to it in the project's `.npmrc`:
+The package is on GitHub Packages. Map the `@frascella-dev` scope to it in the project's `.npmrc`:
 
 ```ini
-@manuto276:registry=https://npm.pkg.github.com
+@frascella-dev:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -32,14 +32,14 @@ GitHub Packages asks for a token even for public packages:
   `GITHUB_TOKEN`.
 
 ```sh
-npm install @manuto276/analytics-browser
-# or: pnpm add @manuto276/analytics-browser  /  yarn add @manuto276/analytics-browser
+npm install @frascella-dev/analytics-browser
+# or: pnpm add @frascella-dev/analytics-browser  /  yarn add @frascella-dev/analytics-browser
 ```
 
 ## Plain JavaScript
 
 ```ts
-import { load } from '@manuto276/analytics-browser';
+import { load } from '@frascella-dev/analytics-browser';
 
 export const analytics = load({
   serviceUrl: 'https://stats.example.net',
@@ -111,7 +111,7 @@ Importing the package types `window.analytics` and `window.__analytics` as the t
 stub, so `window.analytics?.track?.('x')` type-checks. For a custom global name:
 
 ```ts
-import type { AnalyticsGlobals, AnalyticsWindow } from '@manuto276/analytics-browser';
+import type { AnalyticsGlobals, AnalyticsWindow } from '@frascella-dev/analytics-browser';
 
 declare global {
   interface Window extends AnalyticsGlobals<'stats'> {}
@@ -126,7 +126,7 @@ window.stats?.track?.('signup');
 
 ```tsx
 // main.tsx
-import { AnalyticsProvider } from '@manuto276/analytics-browser/react';
+import { AnalyticsProvider } from '@frascella-dev/analytics-browser/react';
 
 createRoot(document.getElementById('root')!).render(
   <AnalyticsProvider serviceUrl="https://stats.example.net" publicKey="pk_XXXXXXXXXXXXXXXXXXXXX">
@@ -136,7 +136,7 @@ createRoot(document.getElementById('root')!).render(
 ```
 
 ```tsx
-import { useAnalytics, useConsent } from '@manuto276/analytics-browser/react';
+import { useAnalytics, useConsent } from '@frascella-dev/analytics-browser/react';
 
 function Pricing() {
   const analytics = useAnalytics();
@@ -166,7 +166,7 @@ directly. Put it in a small client component if you prefer to keep the options i
 ```tsx
 // app/analytics.tsx
 'use client';
-import { AnalyticsProvider } from '@manuto276/analytics-browser/react';
+import { AnalyticsProvider } from '@frascella-dev/analytics-browser/react';
 
 export function Analytics({ children }: { children: React.ReactNode }) {
   return (
@@ -202,7 +202,7 @@ router hook is needed. The Pages Router works the same way from `_app.tsx`.
 ```ts
 // main.ts
 import { createApp } from 'vue';
-import { createAnalytics } from '@manuto276/analytics-browser/vue';
+import { createAnalytics } from '@frascella-dev/analytics-browser/vue';
 import App from './App.vue';
 
 createApp(App)
@@ -212,7 +212,7 @@ createApp(App)
 
 ```vue
 <script setup lang="ts">
-import { useAnalytics, useConsent } from '@manuto276/analytics-browser/vue';
+import { useAnalytics, useConsent } from '@frascella-dev/analytics-browser/vue';
 
 const analytics = useAnalytics();
 const { status, open } = useConsent();
@@ -234,7 +234,7 @@ listening when the component (or effect scope) is disposed. Outside components p
 
 ```ts
 // plugins/analytics.ts
-import { createAnalytics } from '@manuto276/analytics-browser/vue';
+import { createAnalytics } from '@frascella-dev/analytics-browser/vue';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig().public;

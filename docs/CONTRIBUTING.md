@@ -20,7 +20,7 @@ Security problems are **not** reported as issues — follow [SECURITY.md](SECURI
 Everything runs in containers; you need Docker (compose v2 + buildx) and `make`.
 
 ```sh
-git clone git@github.com:manuto276/analytics.git
+git clone git@github.com:frascella-dev/analytics.git
 cd analytics
 make help
 make certs && make up

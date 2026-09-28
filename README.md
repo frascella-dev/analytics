@@ -31,7 +31,7 @@ guidelines of 10 June 2021). See [docs/privacy](docs/privacy) and the points mar
 | `services/tracker` | Tracker and consent banner (TypeScript, esbuild, < 5 KB gzip) |
 | `services/e2e` | Playwright end-to-end tests with fixture sites |
 | `services/wordpress-plugin/analytics-connector` | [Analytics for WordPress](services/wordpress-plugin/analytics-connector/README.md): the tracker, consent links and a dashboard in WordPress (GPL-2.0-or-later, released on `wordpress-plugin-v*` tags) |
-| `services/sdk/browser`, `services/sdk/node` | JavaScript SDKs `@manuto276/analytics-browser` (typed loader, React and Vue bindings) and `@manuto276/analytics-node` (server API client), MIT, on GitHub Packages, released on `sdk-browser-v*` / `sdk-node-v*` tags |
+| `services/sdk/browser`, `services/sdk/node` | JavaScript SDKs `@frascella-dev/analytics-browser` (typed loader, React and Vue bindings) and `@frascella-dev/analytics-node` (server API client), MIT, on GitHub Packages, released on `sdk-browser-v*` / `sdk-node-v*` tags |
 | `deploy/docker` | Dockerfile (dev, test, package, runtime stages) and compose files |
 | `deploy/manual` | `build.sh`, `publish.sh` and the deploy `console` for managed PHP hosts |
 | `deploy/examples` | nginx vhost, first-party proxy, Varnish and crontab examples |

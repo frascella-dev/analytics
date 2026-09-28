@@ -1,8 +1,8 @@
 name: SDK release
 
 # The JavaScript SDKs are released on their own tags (ADR 0010): `sdk-browser-vX.Y.Z` publishes
-# @manuto276/analytics-browser from services/sdk/browser, `sdk-node-vX.Y.Z` publishes
-# @manuto276/analytics-node from services/sdk/node. The service keeps `v*` (release.yml) and the
+# @frascella-dev/analytics-browser from services/sdk/browser, `sdk-node-vX.Y.Z` publishes
+# @frascella-dev/analytics-node from services/sdk/node. The service keeps `v*` (release.yml) and the
 # WordPress plugin `wordpress-plugin-v*`. The tag must match the package's version.
 
 on:
@@ -51,7 +51,7 @@ jobs:
         with:
           node-version: '24'
           registry-url: https://npm.pkg.github.com
-          scope: '@manuto276'
+          scope: '@frascella-dev'
 
       - name: Enable pnpm
         run: corepack enable

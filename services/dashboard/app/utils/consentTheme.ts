@@ -35,7 +35,7 @@ export const RANGES = {
 export const LINE_HEIGHT: readonly [number, number] = [1, 2]
 export const CSS_MAX_BYTES = 8192
 export const FONT_FAMILY_MAX = 200
-export const THEME_SCHEMA_ID = 'https://github.com/manuto276/analytics/docs/api/consent-theme.v2.schema.json'
+export const THEME_SCHEMA_ID = 'https://github.com/frascella-dev/analytics/docs/api/consent-theme.v2.schema.json'
 
 export type DesktopPosition = typeof DESKTOP_POSITIONS[number]
 export type MobilePosition = typeof MOBILE_POSITIONS[number]

@@ -5,7 +5,7 @@ This program is free software: you can redistribute it and/or modify it under th
 GNU Affero General Public License as published by the Free Software Foundation, either version 3
 of the License, or (at your option) any later version. See LICENSE.
 
-Source code: https://github.com/manuto276/analytics
+Source code: https://github.com/frascella-dev/analytics
 
 The wordmark, the icon (favicon and app icon) and the README banner are original work of this
 project and carry the same licence as the rest of the repository. Their source is the Sketch
@@ -30,8 +30,8 @@ Third-party components
   services/dashboard/pnpm-lock.yaml, services/tracker/pnpm-lock.yaml and the SDKs' lockfiles.
 * The optional WordPress plugin in services/wordpress-plugin/analytics-connector is licensed
   GPL-2.0-or-later (see its own LICENSE file).
-* The JavaScript SDK packages in services/sdk/browser (@manuto276/analytics-browser) and
-  services/sdk/node (@manuto276/analytics-node) are licensed under the MIT License (see the LICENSE
+* The JavaScript SDK packages in services/sdk/browser (@frascella-dev/analytics-browser) and
+  services/sdk/node (@frascella-dev/analytics-node) are licensed under the MIT License (see the LICENSE
   file in each directory), because they are bundled into other people's applications. They contain
   no tracker or server code; the tracker and the server remain AGPL-3.0-or-later. See
   docs/architecture/adr/0010-sdk-packages.md.

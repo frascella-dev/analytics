@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/manuto276/analytics/docs/api/consent-theme.v2.schema.json",
+  "$id": "https://github.com/frascella-dev/analytics/docs/api/consent-theme.v2.schema.json",
   "title": "Consent banner theme v2",
   "description": "The `theme` of a consent configuration (PUT /sites/{siteId}/consent/draft). Every field is optional on write: missing fields take the defaults shown here, and the stored theme is complete. The server compiles it (with the custom CSS) into the banner stylesheet sent as `consent.css` in window.__an_cfg. v1 themes (bg, fg, ac, acf, rad, pos) are still accepted and are upgraded on read; the two shapes cannot be mixed. See docs/integration/consent-banner.md.",
   "type": "object",

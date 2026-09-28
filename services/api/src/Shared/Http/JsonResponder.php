@@ -35,7 +35,7 @@ final readonly class JsonResponder
     public function problem(ApiProblem $problem, ?string $requestId = null): ResponseInterface
     {
         $body = [
-            'type' => 'https://github.com/manuto276/analytics/blob/main/docs/api/errors.md#' . $problem->type,
+            'type' => 'https://github.com/frascella-dev/analytics/blob/main/docs/api/errors.md#' . $problem->type,
             'title' => $problem->title(),
             'status' => $problem->status,
             'code' => $problem->type,

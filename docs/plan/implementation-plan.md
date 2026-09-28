@@ -21,7 +21,7 @@
 
 | Area | Decision |
 |---|---|
-| Repo | `/Users/emanuelefrascella/Progetti/analytics`, `git init`, remote `git@github.com:manuto276/analytics.git`, public, AGPL-3.0-or-later. Top-level: `deploy/`, `services/`, `docs/` (+ root README, LICENSE, NOTICE, Makefile, `.github/`, `.editorconfig`, `.gitignore`). |
+| Repo | `/Users/emanuelefrascella/Progetti/analytics`, `git init`, remote `git@github.com:frascella-dev/analytics.git`, public, AGPL-3.0-or-later. Top-level: `deploy/`, `services/`, `docs/` (+ root README, LICENSE, NOTICE, Makefile, `.github/`, `.editorconfig`, `.gitignore`). |
 | Independence | No client-specific code, names or domains. Examples use `example.com` / `example.net`. |
 | Language | Code, docs, commits in English. Dashboard i18n en + it. |
 | Backend | PHP 8.4 (CI also 8.5), Slim 4.15, PHP-DI 7 + slim-bridge, Doctrine ORM 3 + DBAL 4 + Migrations 3, Symfony Console 8, MySQL 8.4. Redis optional; no APCu. |
@@ -419,7 +419,7 @@ Rollback only moves the symlink; warns and requires `--force` when the DB has mi
 Managed PHP host setup (UI, once): PHP 8.4 site, web root `current/public`, vhost edits (SPA `try_files`, `/api/` `/t/` `/_ops/` → index.php, `/_nuxt/` long cache, `$realpath_root`, anonymised `/t/` log), DB + user, cron jobs, TLS, page cache (Varnish) off for this site.
 
 ### 10.3 Docker production (`deploy/docker/compose.prod.yml`)
-Images `ghcr.io/manuto276/analytics-php:<version>` (php:8.4-fpm + pdo_mysql, intl, opcache, redis; `validate_timestamps=0`) and `analytics-web` (nginx + public assets), from the same Dockerfile stages. Services: `migrate` (one-shot), `app` (depends on migrate completed, healthcheck), `web` (nginx, anonymised log, behind TLS proxy), `scheduler` (supercronic), `worker` (profile queue), `mysql:8.4` (profile bundled-db), `redis:7` (profile redis, no persistence). Volumes `mysql-data`, `storage`, `logs`; env via `env_file`, no secrets in images. Upgrade: `docker compose pull && up -d`.
+Images `ghcr.io/frascella-dev/analytics-php:<version>` (php:8.4-fpm + pdo_mysql, intl, opcache, redis; `validate_timestamps=0`) and `analytics-web` (nginx + public assets), from the same Dockerfile stages. Services: `migrate` (one-shot), `app` (depends on migrate completed, healthcheck), `web` (nginx, anonymised log, behind TLS proxy), `scheduler` (supercronic), `worker` (profile queue), `mysql:8.4` (profile bundled-db), `redis:7` (profile redis, no persistence). Volumes `mysql-data`, `storage`, `logs`; env via `env_file`, no secrets in images. Upgrade: `docker compose pull && up -d`.
 
 ## 11. WordPress plugin (optional, generic)
 `services/wordpress-plugin/analytics-connector`, GPL-2.0-or-later (own LICENSE). Separate plugin because tracking must load on every public page regardless of theme/page builder, it is versioned with the tracker/API, and it stays optional. Features (< 400 lines): settings page (service URL, public key, direct or proxy path, skip users with a capability); `wp_enqueue_scripts` with `strategy: defer`; `[analytics_consent_link]` shortcode, block and `#analytics-consent` menu link; `analytics_connector_content_key` filter → meta tag; `analytics_connector_track_conversion($name, $args)` (reads `an_vid`, non-blocking `wp_remote_post`, key from `ANALYTICS_CONNECTOR_API_KEY` constant); docs for page caches. Tests: PHPUnit + Brain Monkey; nightly WordPress smoke via Docker.
@@ -486,7 +486,7 @@ Coverage gates: PHP lines ≥ 85% overall, ≥ 95% Tracking/Consent/Identity/Sha
 Each milestone ends with a green `make ci` and a verifiable result.
 
 ### M0 — Repository skeleton and tooling
-- [x] `git init` in `/Users/emanuelefrascella/Progetti/analytics`, remote `git@github.com:manuto276/analytics.git`, AGPL-3.0 LICENSE, NOTICE, README, `.editorconfig`, `.gitignore`
+- [x] `git init` in `/Users/emanuelefrascella/Progetti/analytics`, remote `git@github.com:frascella-dev/analytics.git`, AGPL-3.0 LICENSE, NOTICE, README, `.editorconfig`, `.gitignore`
 - [x] Folders `deploy/ services/ docs/`; **save this plan as `docs/plan/implementation-plan.md`**; ADR template
 - [x] Dev + test compose (php 8.4 + pcov, nginx + test certs, mysql 8.4, node 24 + pnpm); Makefile
 - [x] `services/api`: Slim `GET /api/v1/health`; PHPUnit suites; PHPStan max, Deptrac, CS-Fixer, Rector

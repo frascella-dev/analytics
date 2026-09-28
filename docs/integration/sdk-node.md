@@ -1,4 +1,4 @@
-# Node SDK (`@manuto276/analytics-node`)
+# Node SDK (`@frascella-dev/analytics-node`)
 
 A client for the server API (`/api/v1/server/sites/{publicKey}/*`): send
 [server-side conversions](server-side-conversions.md), read a content key's stats and the site's
@@ -8,10 +8,10 @@ typed from [../api/openapi.yaml](../api/openapi.yaml). MIT licensed
 
 ## Install
 
-The package is on GitHub Packages. Map the `@manuto276` scope to it in the project's `.npmrc`:
+The package is on GitHub Packages. Map the `@frascella-dev` scope to it in the project's `.npmrc`:
 
 ```ini
-@manuto276:registry=https://npm.pkg.github.com
+@frascella-dev:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -20,13 +20,13 @@ GitHub Packages asks for a token even for public packages: a personal access tok
 workflow's token with `permissions: packages: read`.
 
 ```sh
-npm install @manuto276/analytics-node
+npm install @frascella-dev/analytics-node
 ```
 
 ## The client
 
 ```ts
-import { createClient } from '@manuto276/analytics-node';
+import { createClient } from '@frascella-dev/analytics-node';
 
 export const analytics = createClient({
   serviceUrl: 'https://stats.example.net',
@@ -83,7 +83,7 @@ twice.
 ### Reading the visitor id
 
 ```ts
-import { visitorIdFromCookie, visitorIdFromRequest } from '@manuto276/analytics-node';
+import { visitorIdFromCookie, visitorIdFromRequest } from '@frascella-dev/analytics-node';
 
 visitorIdFromRequest(req);                      // Node IncomingMessage, Express/Koa/Fastify, Fetch Request
 visitorIdFromCookie(req.headers.cookie);        // a raw Cookie header
@@ -98,7 +98,7 @@ checkout runs on another domain, pass the id from the browser instead (`getVisit
 
 ```ts
 import express from 'express';
-import { AnalyticsApiError, visitorIdFromRequest } from '@manuto276/analytics-node';
+import { AnalyticsApiError, visitorIdFromRequest } from '@frascella-dev/analytics-node';
 import { analytics } from './analytics';
 
 const app = express();
@@ -128,7 +128,7 @@ app.post('/checkout/complete', express.json(), async (req, res) => {
 
 ```ts
 // app/api/checkout/route.ts
-import { visitorIdFromRequest } from '@manuto276/analytics-node';
+import { visitorIdFromRequest } from '@frascella-dev/analytics-node';
 import { analytics } from '@/lib/analytics';
 
 export async function POST(request: Request): Promise<Response> {

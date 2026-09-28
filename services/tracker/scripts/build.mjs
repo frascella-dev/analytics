@@ -1,6 +1,6 @@
 import { build } from 'esbuild';
 
-const banner = '/*! analytics | AGPL-3.0-or-later | source: https://github.com/manuto276/analytics */';
+const banner = '/*! analytics | AGPL-3.0-or-later | source: https://github.com/frascella-dev/analytics */';
 const common = {
   bundle: true,
   format: 'iife',

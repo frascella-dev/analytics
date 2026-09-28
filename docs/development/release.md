@@ -4,7 +4,7 @@ Two artefacts come out of the same `deploy/docker/Dockerfile`:
 
 1. **a tarball** `analytics-<TS>.tar.gz` (+ `.sha256`) for managed PHP hosts,
    deployed with `deploy/manual/console`;
-2. **container images** `ghcr.io/manuto276/analytics-php`, `-cron` and `-web`
+2. **container images** `ghcr.io/frascella-dev/analytics-php`, `-cron` and `-web`
    for the Docker deployment (`deploy/docker/compose.prod.yml`).
 
 Both are built from the `release-tree` stage, so what a tarball contains and

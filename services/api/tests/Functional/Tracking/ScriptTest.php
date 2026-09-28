@@ -28,7 +28,7 @@ final class ScriptTest extends HttpTestCase
         self::assertSame('public, max-age=300, stale-while-revalidate=600', $response->getHeaderLine('Cache-Control'));
         self::assertSame('cross-origin', $response->getHeaderLine('Cross-Origin-Resource-Policy'));
         $body = (string) $response->getBody();
-        self::assertStringStartsWith('/*! analytics | AGPL-3.0-or-later | source: https://github.com/manuto276/analytics */', $body);
+        self::assertStringStartsWith('/*! analytics | AGPL-3.0-or-later | source: https://github.com/frascella-dev/analytics */', $body);
         $config = self::config($body);
         self::assertSame($site->publicKey, $config['k']);
         self::assertSame('.site.test', $config['cd']);

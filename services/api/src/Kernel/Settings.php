@@ -133,7 +133,7 @@ final readonly class Settings
             cacheDir: $get('CACHE_DIR', $projectDir . '/var/cache') ?? $projectDir . '/var/cache',
             geoDbPath: $get('GEO_DB_PATH', $storageDir . '/geo/dbip-country-lite.mmdb') ?? '',
             geoDbUrl: $get('GEO_DB_URL', 'https://download.db-ip.com/free/dbip-country-lite-%s.mmdb.gz') ?? '',
-            sourceUrl: $get('SOURCE_URL', 'https://github.com/manuto276/analytics') ?? '',
+            sourceUrl: $get('SOURCE_URL', 'https://github.com/frascella-dev/analytics') ?? '',
             opsToken: $get('OPS_TOKEN'),
             testClock: $appEnv === 'test' ? $get('APP_TEST_CLOCK') : null,
             retentionMonths: max(1, (int) ($get('RETENTION_MONTHS', '13') ?? '13')),

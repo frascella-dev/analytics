@@ -232,8 +232,8 @@ BUILD_ARGS_IMAGE = --build-arg BUILD_TS=$$(date -u +%Y%m%dT%H%M%SZ) \
   --build-arg COMMIT_TIME=$$(git show -s --format=%ct HEAD)
 
 build-images: ## Build the production images locally
-	docker buildx build -f $(DOCKER_DIR)/Dockerfile --target php-runtime $(BUILD_ARGS_IMAGE) -t ghcr.io/manuto276/analytics-php:local --load .
-	docker buildx build -f $(DOCKER_DIR)/Dockerfile --target nginx-runtime $(BUILD_ARGS_IMAGE) -t ghcr.io/manuto276/analytics-web:local --load .
+	docker buildx build -f $(DOCKER_DIR)/Dockerfile --target php-runtime $(BUILD_ARGS_IMAGE) -t ghcr.io/frascella-dev/analytics-php:local --load .
+	docker buildx build -f $(DOCKER_DIR)/Dockerfile --target nginx-runtime $(BUILD_ARGS_IMAGE) -t ghcr.io/frascella-dev/analytics-web:local --load .
 
 ci: ## Everything CI runs, in the same order (see .github/workflows/ci.yml)
 	$(MAKE) lint

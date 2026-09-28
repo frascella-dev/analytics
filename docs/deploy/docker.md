@@ -8,9 +8,9 @@ tree.
 
 | Image | Stage | Contents |
 |---|---|---|
-| `ghcr.io/manuto276/analytics-php` | `php-runtime` | PHP-FPM 8.4 as the `app` user (uid 1000), the release tree at `/app`, `opcache.validate_timestamps=0`, an FPM ping healthcheck |
-| `ghcr.io/manuto276/analytics-cron` | `php-cron` | the same, plus supercronic running `deploy/docker/cron/crontab` |
-| `ghcr.io/manuto276/analytics-web` | `nginx-runtime` | nginx 1.29-alpine with `public/` at `/app/public` and `deploy/docker/nginx/prod.conf` |
+| `ghcr.io/frascella-dev/analytics-php` | `php-runtime` | PHP-FPM 8.4 as the `app` user (uid 1000), the release tree at `/app`, `opcache.validate_timestamps=0`, an FPM ping healthcheck |
+| `ghcr.io/frascella-dev/analytics-cron` | `php-cron` | the same, plus supercronic running `deploy/docker/cron/crontab` |
+| `ghcr.io/frascella-dev/analytics-web` | `nginx-runtime` | nginx 1.29-alpine with `public/` at `/app/public` and `deploy/docker/nginx/prod.conf` |
 
 `/app` is the same absolute path in the PHP and the nginx image, so `$realpath_root` resolves
 identically on both sides.

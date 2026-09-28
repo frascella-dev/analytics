@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `@manuto276/analytics-node`. Versions follow
+All notable changes to `@frascella-dev/analytics-node`. Versions follow
 [Semantic Versioning](https://semver.org). Releases are tagged `sdk-node-vX.Y.Z`.
 
 ## [0.1.0] — 2026-09-23

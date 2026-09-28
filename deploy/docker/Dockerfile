@@ -8,8 +8,8 @@
 #   vendor        composer install --no-dev (services/api)
 #   release-tree  the release layout of plan §10.1
 #   package       FROM scratch: dist/analytics-<TS>.tar.gz  (--output type=local)
-#   php-runtime   production app image  (ghcr.io/manuto276/analytics-php)
-#   nginx-runtime production web image  (ghcr.io/manuto276/analytics-web)
+#   php-runtime   production app image  (ghcr.io/frascella-dev/analytics-php)
+#   nginx-runtime production web image  (ghcr.io/frascella-dev/analytics-web)
 #
 # Build arguments (deploy/manual/build.sh passes all four):
 #   BUILD_TS      20260917T142501Z    package version / tar name
@@ -183,7 +183,7 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 CMD ["fpm-healthcheck"]
 LABEL org.opencontainers.image.title="analytics-php" \
       org.opencontainers.image.description="Self-hosted privacy-first web analytics (PHP-FPM application image)" \
-      org.opencontainers.image.source="https://github.com/manuto276/analytics" \
+      org.opencontainers.image.source="https://github.com/frascella-dev/analytics" \
       org.opencontainers.image.licenses="AGPL-3.0-or-later"
 CMD ["php-fpm", "--nodaemonize"]
 
@@ -225,5 +225,5 @@ COPY deploy/docker/nginx/snippets/ /etc/nginx/snippets/
 COPY --from=release-tree /release/public/ /app/public/
 LABEL org.opencontainers.image.title="analytics-web" \
       org.opencontainers.image.description="Self-hosted privacy-first web analytics (nginx image with the static dashboard)" \
-      org.opencontainers.image.source="https://github.com/manuto276/analytics" \
+      org.opencontainers.image.source="https://github.com/frascella-dev/analytics" \
       org.opencontainers.image.licenses="AGPL-3.0-or-later"

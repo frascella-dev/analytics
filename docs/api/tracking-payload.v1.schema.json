@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/manuto276/analytics/docs/api/tracking-payload.v1.schema.json",
+  "$id": "https://github.com/frascella-dev/analytics/docs/api/tracking-payload.v1.schema.json",
   "title": "Tracking payload v1",
   "description": "Body of POST /t/e. Sent as text/plain (sendBeacon) or application/json (fetch fallback).",
   "type": "object",

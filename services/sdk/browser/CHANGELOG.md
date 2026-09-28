@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `@manuto276/analytics-browser`. Versions follow
+All notable changes to `@frascella-dev/analytics-browser`. Versions follow
 [Semantic Versioning](https://semver.org). Releases are tagged `sdk-browser-vX.Y.Z`.
 
 ## [0.1.0] — 2026-09-23
@@ -15,7 +15,7 @@ First release.
 - Server rendering: without `window`, `load()` inserts nothing and every call does nothing.
 - `declare global` typings for `window.analytics` and `window.__analytics`, and
   `AnalyticsGlobals<'name'>` / `AnalyticsWindow<'name'>` for a custom global name.
-- `@manuto276/analytics-browser/react`: `AnalyticsProvider`, `useAnalytics`, `useConsent`.
-- `@manuto276/analytics-browser/vue`: `createAnalytics` plugin, `useAnalytics`, `useConsent`.
+- `@frascella-dev/analytics-browser/react`: `AnalyticsProvider`, `useAnalytics`, `useConsent`.
+- `@frascella-dev/analytics-browser/vue`: `createAnalytics` plugin, `useAnalytics`, `useConsent`.
 - The tracker's API types are generated from the tracker's source (`pnpm tracker-types`).
 - ES modules, CommonJS and type declarations; no runtime dependencies; MIT.

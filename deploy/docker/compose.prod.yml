@@ -11,7 +11,7 @@
 #   queue       run a queue worker (requires INGEST_MODE=queue and REDIS_DSN)
 #
 # Images are built from deploy/docker/Dockerfile (targets php-runtime, php-cron and
-# nginx-runtime) and published as ghcr.io/manuto276/analytics-php, -cron and -web.
+# nginx-runtime) and published as ghcr.io/frascella-dev/analytics-php, -cron and -web.
 # Upgrade:  docker compose pull && docker compose up -d
 #
 # TLS terminates in front of `web` (reverse proxy or ingress); set
@@ -20,7 +20,7 @@
 name: analytics
 
 x-app-common: &app-common
-  image: ghcr.io/manuto276/analytics-php:${ANALYTICS_VERSION:-latest}
+  image: ghcr.io/frascella-dev/analytics-php:${ANALYTICS_VERSION:-latest}
   build:
     context: ../..
     dockerfile: deploy/docker/Dockerfile
@@ -58,7 +58,7 @@ services:
       start_period: 20s
 
   web:
-    image: ghcr.io/manuto276/analytics-web:${ANALYTICS_VERSION:-latest}
+    image: ghcr.io/frascella-dev/analytics-web:${ANALYTICS_VERSION:-latest}
     build:
       context: ../..
       dockerfile: deploy/docker/Dockerfile
@@ -79,7 +79,7 @@ services:
   # Scheduled jobs (plan §9) through supercronic, so cron output reaches docker logs.
   scheduler:
     <<: *app-common
-    image: ghcr.io/manuto276/analytics-cron:${ANALYTICS_VERSION:-latest}
+    image: ghcr.io/frascella-dev/analytics-cron:${ANALYTICS_VERSION:-latest}
     build:
       context: ../..
       dockerfile: deploy/docker/Dockerfile

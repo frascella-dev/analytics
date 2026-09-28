@@ -12,7 +12,7 @@ wp() { docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/p -w /p wo
 
 wp i18n make-pot . languages/analytics-connector.pot --slug=analytics-connector --domain=analytics-connector \
     --exclude=node_modules,vendor,src,dist,docs,tests \
-    --headers='{"Report-Msgid-Bugs-To":"https://github.com/manuto276/analytics/issues"}'
+    --headers='{"Report-Msgid-Bugs-To":"https://github.com/frascella-dev/analytics/issues"}'
 wp i18n make-mo languages
 rm -f languages/analytics-connector-*-*.json
 wp i18n make-json languages --no-purge

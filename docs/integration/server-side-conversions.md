@@ -42,7 +42,7 @@ const visitorId = /^[A-Za-z0-9_-]{22}$/.test(raw ?? '') ? raw : null
 
 ```js
 // Node SDK: an IncomingMessage, an Express request or a Fetch Request
-import { visitorIdFromRequest } from '@manuto276/analytics-node'
+import { visitorIdFromRequest } from '@frascella-dev/analytics-node'
 const visitorId = visitorIdFromRequest(req)
 ```
 
@@ -103,12 +103,12 @@ curl_setopt_array($ch, [
 curl_exec($ch);   // 202 {"accepted":1,"duplicates":0,"rejected":[]}
 ```
 
-In Node, the [Node SDK](sdk-node.md) (`@manuto276/analytics-node`, MIT) applies the same rules —
+In Node, the [Node SDK](sdk-node.md) (`@frascella-dev/analytics-node`, MIT) applies the same rules —
 the payload, the `visitor_id` check, minor units, ISO 8601 — and retries `429`/`5xx` honouring
 `Retry-After`:
 
 ```ts
-import { AnalyticsApiError, createClient, visitorIdFromRequest } from '@manuto276/analytics-node'
+import { AnalyticsApiError, createClient, visitorIdFromRequest } from '@frascella-dev/analytics-node'
 
 const analytics = createClient({
   serviceUrl: 'https://stats.example.net',

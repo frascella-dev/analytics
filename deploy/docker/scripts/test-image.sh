@@ -68,9 +68,9 @@ build_args=(
   --build-arg "COMMIT_TIME=$(git show -s --format=%ct HEAD)"
 )
 docker buildx build -f deploy/docker/Dockerfile --target php-runtime "${build_args[@]}" \
-  -t "ghcr.io/manuto276/analytics-php:${version}" --load .
+  -t "ghcr.io/frascella-dev/analytics-php:${version}" --load .
 docker buildx build -f deploy/docker/Dockerfile --target nginx-runtime "${build_args[@]}" \
-  -t "ghcr.io/manuto276/analytics-web:${version}" --load .
+  -t "ghcr.io/frascella-dev/analytics-web:${version}" --load .
 
 echo "==> Starting the stack (bundled database)"
 dc up -d --wait --wait-timeout 300 mysql migrate app web

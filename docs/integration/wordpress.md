@@ -17,7 +17,7 @@ All of these are removed on uninstall. Reports are cached in transients for 60 s
 
 ## Install and configure
 
-1. Upload `analytics-connector-X.Y.Z.zip` from the [releases](https://github.com/manuto276/analytics/releases?q=wordpress-plugin) (Plugins → Add New → Upload) and activate it.
+1. Upload `analytics-connector-X.Y.Z.zip` from the [releases](https://github.com/frascella-dev/analytics/releases?q=wordpress-plugin) (Plugins → Add New → Upload) and activate it.
 2. **Analytics → Settings** (requires `analytics_manage`, given to administrators). It is a React screen saving through `analytics-connector/v1/admin/settings`, behind the REST nonce:
 
 | Setting | Default | Notes |

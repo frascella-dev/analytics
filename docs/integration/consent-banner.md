@@ -317,7 +317,7 @@ and carries a `$schema` line so editors can validate it:
 
 ```json
 {
-  "$schema": "https://github.com/manuto276/analytics/docs/api/consent-theme.v2.schema.json",
+  "$schema": "https://github.com/frascella-dev/analytics/docs/api/consent-theme.v2.schema.json",
   "colors": { "background": "#111827", "text": "#f9fafb", "accent": "#0f766e", "accentText": "#ffffff", "link": "#93c5fd" },
   "shape": { "radius": 16, "buttonRadius": 999 },
   "layout": { "mobile": { "position": "sheet", "buttons": "stack" } },

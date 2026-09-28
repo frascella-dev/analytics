@@ -4,7 +4,7 @@ Every error is an RFC 9457 problem document with `Content-Type: application/prob
 
 ```json
 {
-  "type": "https://github.com/manuto276/analytics/blob/main/docs/api/errors.md#validation_failed",
+  "type": "https://github.com/frascella-dev/analytics/blob/main/docs/api/errors.md#validation_failed",
   "title": "Validation failed",
   "status": 422,
   "code": "validation_failed",

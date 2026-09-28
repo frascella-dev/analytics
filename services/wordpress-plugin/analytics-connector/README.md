@@ -4,7 +4,7 @@
 </picture>
 
 <p align="center">
-  <a href="https://github.com/manuto276/analytics/releases?q=wordpress-plugin"><img alt="Release 1.0.0" src="https://img.shields.io/badge/release-1.0.0-1d4ed8"></a>
+  <a href="https://github.com/frascella-dev/analytics/releases?q=wordpress-plugin"><img alt="Release 1.0.0" src="https://img.shields.io/badge/release-1.0.0-1d4ed8"></a>
   <img alt="WordPress 6.6+" src="https://img.shields.io/badge/WordPress-6.6%2B-1d4ed8">
   <img alt="PHP 8.1+" src="https://img.shields.io/badge/PHP-8.1%2B-1d4ed8">
   <img alt="License GPL-2.0-or-later" src="https://img.shields.io/badge/license-GPL--2.0--or--later-1d4ed8">
@@ -66,7 +66,7 @@ server-side. The key stays on the server, encrypted, and the browser never recei
 ## Install
 
 Download `analytics-connector-<version>.zip` from the
-[releases](https://github.com/manuto276/analytics/releases?q=wordpress-plugin) and upload
+[releases](https://github.com/frascella-dev/analytics/releases?q=wordpress-plugin) and upload
 it from Plugins → Add New → Upload. Then:
 
 1. Analytics → Settings → Connection: the service's address and the site's public key (`pk_…`).
