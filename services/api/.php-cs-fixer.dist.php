@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 $finder = PhpCsFixer\Finder::create()
-    ->in([__DIR__ . '/src', __DIR__ . '/tests', __DIR__ . '/migrations', __DIR__ . '/config'])
+    // config/ holds only the generated, git-ignored csp.php, so it is absent in CI.
+    ->in(array_filter([__DIR__ . '/src', __DIR__ . '/tests', __DIR__ . '/migrations', __DIR__ . '/config'], is_dir(...)))
     ->append([__DIR__ . '/bin/analytics', __DIR__ . '/public/index.php']);
 
 return new PhpCsFixer\Config()
