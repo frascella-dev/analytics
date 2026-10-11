@@ -13,7 +13,8 @@ use Analytics\Tests\Support\Payloads;
  */
 final class PrivacyInvariantsTest extends HttpTestCase
 {
-    private const string UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 PrivacyProbe/7.3.1';
+    // A marker word that no bot pattern matches (device-detector 6.5.2 counts any "Probe" as a bot).
+    private const string UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 PrivacyMarker/7.3.1';
     private const string IPV4 = '198.51.100.123';
     private const string IPV6 = '2001:db8:1234:5678:9abc:def0:1234:5678';
     private const string PROXIED = '203.0.113.211';
@@ -42,7 +43,7 @@ final class PrivacyInvariantsTest extends HttpTestCase
             self::IPV6,
             self::PROXIED,
             '2001:db8:1234:5678',
-            'PrivacyProbe',
+            'PrivacyMarker',
             self::UA,
         ];
         $binaryNeedles = [inet_pton(self::IPV4), inet_pton(self::IPV6), inet_pton(self::PROXIED)];

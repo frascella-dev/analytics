@@ -33,7 +33,7 @@ jobs:
           tools: composer:v2
 
       - name: Cache composer
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.composer/cache
           key: composer-8.4-${{ hashFiles('services/api/composer.lock') }}
@@ -133,7 +133,7 @@ jobs:
           ini-values: memory_limit=1G
 
       - name: Cache composer
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.composer/cache
           key: composer-${{ matrix.php }}-${{ hashFiles('services/api/composer.lock') }}
@@ -177,7 +177,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
       - name: Enable pnpm
@@ -211,7 +211,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
       - name: Enable pnpm
@@ -247,7 +247,7 @@ jobs:
         working-directory: services/sdk/${{ matrix.package }}
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
       - name: Enable pnpm
@@ -301,7 +301,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
 
