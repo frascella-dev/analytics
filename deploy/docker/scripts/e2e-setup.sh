@@ -35,6 +35,10 @@ echo "==> Test stack"
 DOCKER_UID="${DOCKER_UID:-$(id -u)}" DOCKER_GID="${DOCKER_GID:-$(id -g)}" \
   dc up -d --build mysql php console nginx fixtures
 
+# nginx resolves the php upstream once, at start: when `up` recreated the php container (a second
+# run with another uid, as `make test-e2e` after `make e2e-setup`), it would answer 502.
+dc exec -T nginx nginx -s reload
+
 echo "==> PHP dependencies"
 # The php container runs the bind-mounted services/api; a fresh checkout (CI) has no vendor/.
 [ -f services/api/vendor/autoload.php ] || dc exec -T php composer install --no-interaction --no-progress
