@@ -2,6 +2,7 @@
 # Prepares the test stack for the end-to-end suite:
 #   1. certificates (local CA) if they are missing
 #   2. the compose test stack (mysql, php, console bridge, nginx, fixtures)
+#      and the PHP dependencies when services/api/vendor is missing
 #   3. the database migrated
 #   4. an admin user and one site whose domains cover the fixture hosts
 #   5. services/e2e/fixtures/site-key.js with that site's public key
@@ -33,6 +34,10 @@ echo "==> Certificates"
 echo "==> Test stack"
 DOCKER_UID="${DOCKER_UID:-$(id -u)}" DOCKER_GID="${DOCKER_GID:-$(id -g)}" \
   dc up -d --build mysql php console nginx fixtures
+
+echo "==> PHP dependencies"
+# The php container runs the bind-mounted services/api; a fresh checkout (CI) has no vendor/.
+[ -f services/api/vendor/autoload.php ] || dc exec -T php composer install --no-interaction --no-progress
 
 echo "==> Database"
 dc exec -T php php bin/analytics migrations:migrate --no-interaction --allow-no-migration
