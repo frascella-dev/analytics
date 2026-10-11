@@ -19,6 +19,8 @@ final class MaintenanceCommandsTest extends ConsoleTestCase
 
     public function testPartitionsMaintainCreatesFutureMonths(): void
     {
+        // The migrations partition from the wall clock; months before it cannot be added above p_old.
+        $this->clock->modify(gmdate('Y-m-d H:i:s'));
         $output = $this->console('partitions:maintain', ['--ahead' => '6']);
         self::assertStringContainsString('partitions:maintain succeeded', $output);
 

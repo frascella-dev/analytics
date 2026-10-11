@@ -200,6 +200,8 @@ final class ConsoleCommandsTest extends ConsoleTestCase
         $output = $this->console('geo:update', ['--url' => 'file://' . $fixture, '--force' => true]);
         self::assertStringContainsString('geo:update succeeded', $output);
         self::assertFileExists($settings->geoDbPath);
+        // geo:update compares the file's mtime with the clock, which the tests freeze.
+        touch($settings->geoDbPath, $this->clock->now()->getTimestamp());
 
         // A second run without --force keeps the file (it is from this month).
         self::assertStringContainsString('current', $this->console('geo:update', ['--url' => 'file://' . $fixture]));
