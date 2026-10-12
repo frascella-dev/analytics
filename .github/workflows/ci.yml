@@ -166,7 +166,7 @@ jobs:
 
       - name: Upload coverage
         if: matrix.php == '8.4'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: php-coverage
           path: services/api/coverage/
@@ -200,7 +200,7 @@ jobs:
       - name: Size budget
         working-directory: services/tracker
         run: pnpm size
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: tracker-dist
           path: services/tracker/dist/
@@ -327,7 +327,7 @@ jobs:
 
       - name: Upload the report
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report
           path: |
@@ -378,7 +378,7 @@ jobs:
       - name: Deploy smoke test
         run: make test-smoke
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: package
           path: |
