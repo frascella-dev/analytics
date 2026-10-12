@@ -23,7 +23,7 @@ jobs:
     name: PHP quality (PHPStan, Deptrac, CS, Rector)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -73,7 +73,7 @@ jobs:
     name: Lint workflows, Dockerfile and shell scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: actionlint
         run: docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint:latest -color
@@ -123,7 +123,7 @@ jobs:
       TEST_DATABASE_URL: mysql://root:root@127.0.0.1:3306/analytics_test
       APP_ENV: test
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -176,7 +176,7 @@ jobs:
     name: Tracker (lint, test, size)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -210,7 +210,7 @@ jobs:
     name: Dashboard (lint, typecheck, test, generate)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -246,7 +246,7 @@ jobs:
       run:
         working-directory: services/sdk/${{ matrix.package }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -278,7 +278,7 @@ jobs:
     name: Deploy console tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
@@ -299,7 +299,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [php-tests, tracker, dashboard]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v7
         with:
@@ -353,7 +353,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [php-quality, deploy-console]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -391,7 +391,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [php-quality, deploy-console]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: docker/setup-buildx-action@v3
       - name: Build and check the images
         run: make test-image
