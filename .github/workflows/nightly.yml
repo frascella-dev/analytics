@@ -64,7 +64,7 @@ jobs:
         run: make e2e-setup
       - name: Suite (chromium, firefox, webkit)
         run: make test-e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: playwright-report-nightly
@@ -234,7 +234,7 @@ jobs:
           DURATION: '120s'
         run: make perf
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: k6-summary
@@ -259,7 +259,7 @@ jobs:
           docker run --rm --network host -v "$PWD:/zap/wrk:rw" \
             ghcr.io/zaproxy/zaproxy:stable zap-baseline.py \
             -t http://127.0.0.1:8099 -r zap-report.html -I
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: zap-report
