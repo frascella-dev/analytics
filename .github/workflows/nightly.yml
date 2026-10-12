@@ -52,7 +52,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
       - name: Certificates
         run: ./deploy/docker/certs/gen-certs.sh
       - name: Tracker and dashboard artefacts
@@ -221,7 +221,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
 
       - name: Seed and run k6
         # Informative: the plan's budgets (collect p95 < 50 ms at 100 rps,
@@ -251,7 +251,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
       - name: Start the production stack
         run: ./deploy/docker/scripts/test-image.sh --keep
       - name: ZAP baseline

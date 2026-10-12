@@ -305,7 +305,7 @@ jobs:
         with:
           node-version: '24'
 
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
 
       - name: Certificates
         run: ./deploy/docker/certs/gen-certs.sh
@@ -357,7 +357,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
 
       - name: Build the tarball
         run: ./deploy/manual/build.sh --allow-dirty
@@ -392,6 +392,6 @@ jobs:
     needs: [php-quality, deploy-console]
     steps:
       - uses: actions/checkout@v5
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
       - name: Build and check the images
         run: make test-image
